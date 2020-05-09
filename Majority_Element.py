@@ -42,3 +42,24 @@ class Solution:
             if value>length//2:
                 return key
 
+#More Optimized Solution(Moore's Algorithm)
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        
+        #Moore's voting algorithm
+        count=1
+        majority=nums[0]
+        length_nums=len(nums)
+        for index in range(1,length_nums):
+            if nums[index] == majority:
+                count+=1
+            else:
+                count-=1
+                if count == 0:
+                    majority=nums[index]
+                    count=1
+        return majority
