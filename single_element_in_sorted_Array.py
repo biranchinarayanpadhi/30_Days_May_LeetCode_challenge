@@ -1,3 +1,4 @@
+#Brute Force Approach(O(logN))
 class Solution(object):
     def singleNonDuplicate(self, arr):
         """
